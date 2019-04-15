@@ -161,6 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518dbf4b7a579c84dab054effba59dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPortal: {fileID: 0}
-  exitX: 0
-  exitY: 0
+  direction: 
