@@ -52,6 +52,7 @@ public class Generator : MonoBehaviour
 
     void Start()
     {
+        DataStorage.Floor ++;
         Gen();
         PrintDungeon();
     }

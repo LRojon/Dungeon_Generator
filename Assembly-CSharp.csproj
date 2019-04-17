@@ -365,6 +365,9 @@
      <Compile Include="Assets\ParadoxNotion\FlowCanvas\Modules\FlowGraphs\TypeConverter.cs" />
      <Compile Include="Assets\ParadoxNotion\FlowCanvas\Modules\FlowGraphs\Wild.cs" />
      <Compile Include="Assets\Player\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\DataStorage.cs" />
+     <Compile Include="Assets\Scripts\EnterStep.cs" />
+     <Compile Include="Assets\UpdateEtage.cs" />
      <None Include="Assets\ParadoxNotion\CanvasCore\Common\Runtime\Serialization\_LICENSE - FULL SERIALIZER.txt" />
      <None Include="Assets\ParadoxNotion\FlowCanvas\!ReadMe!.txt" />
  <Reference Include="Unity.TextMeshPro.Editor">
