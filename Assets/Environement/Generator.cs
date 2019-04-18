@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using UnityEngine;
 
 public enum RoomType
@@ -27,7 +28,7 @@ public class Room
         neighbor = new SortedDictionary<string, Room>();
     }
 
-    public string PrefabName()
+    public string PrefabName(System.Random rand)
     {
         string str = Convert.ToInt32(type).ToString() + "/";
         foreach(string s in neighbor.Keys)
@@ -35,7 +36,7 @@ public class Room
             str += s;
         }
         int tmp = Directory.GetFiles("Assets/Resources/" + str, "*.prefab", SearchOption.TopDirectoryOnly).Length;
-        roomId = (new System.Random().Next(0, tmp)).ToString("D2");
+        roomId = (rand.Next(0, tmp)).ToString("D2");
         str += "/Room_" + roomId;
         return str;
     }
@@ -142,9 +143,10 @@ public class Generator : MonoBehaviour
     void PrintDungeon()
     {
         List<GameObject> lgo = new List<GameObject>();
+        var r = new System.Random();
         foreach(Room room in createdRoom)
         {
-            string str = room.PrefabName();
+            string str = room.PrefabName(r);
             GameObject tmp = (GameObject)Instantiate(Resources.Load(str));
             tmp.transform.position = new Vector3(room.position.x * RoomSize, room.position.y * RoomSize);
             lgo.Add(tmp);
